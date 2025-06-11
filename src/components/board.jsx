@@ -1,7 +1,7 @@
 // src/components/Board.jsx
 
 import React from 'react';
-import Square from './Square'; // Ensure Square.jsx (or Square.js) is correctly named and located
+import Square from './square'; // Ensure Square.jsx (or Square.js) is correctly named and located
 
 const Board = ({ squares, onClick, disabled, darkMode, winningLine }) => {
     // Helper function to apply borders to create the grid lines
