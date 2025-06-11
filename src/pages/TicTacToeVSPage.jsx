@@ -7,7 +7,7 @@ import TurnIndicator from '../components/TurnIndicator.jsx';
 import ScoreBoard from '../components/scoreboard.jsx';
 import StartGameModal from '../components/StartGameModal.jsx'; // Only for VS mode
 import WinDrawModal from '../components/winModal.jsx';
-import Navbar from '../components/Navbar.jsx';
+import Navbar from '../components/navbar.jsx';
 
 // Import utilities
 import { WINNING_CONDITIONS } from '../utiles/constants.js';
