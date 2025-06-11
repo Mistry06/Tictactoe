@@ -1,0 +1,296 @@
+/* src/index.css - REVISED FOR THREE DISTINCT THEMES AND GLOW */
+
+/* Add to your existing Tailwind imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for the HTML and body, applied globally (1. Light Gaming Theme - Default) */
+html {
+    scroll-behavior: smooth;
+
+    /* --- GLOBAL COLORS (Light Gaming - Soft & Playful) --- */
+    --color-primary: #4CAF50; /* A pleasant Green for primary/X */
+    --color-secondary: #2196F3; /* A friendly Blue for secondary/O */
+    --color-accent: #FFC107; /* Amber for winning lines, highlights */
+    --color-danger: #F44336; /* Classic Red for warnings/errors */
+
+    /* --- PAGE BACKGROUND & TEXT (Light Gaming) --- */
+    --page-bg-start: #e3f2fd; /* Lighter Blue background (for gradient) */
+    --page-bg-end: #bbdefb;    /* Slightly darker Blue (for gradient) */
+    --page-text: #263238;      /* Dark Blue Gray for main text */
+    --page-text-muted: #607d8b; /* Muted Blue Gray */
+    --page-bg: #e3f2fd; /* Default solid background */
+
+    /* --- HEADER COLORS (Light Gaming) --- */
+    --header-bg: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* Soft blue gradient for header */
+    --header-text: #263238; /* Dark text for header */
+
+
+    /* --- CONTAINER/PANEL COLORS (Light Gaming) --- */
+    --panel-bg: #ffffff;      /* White */
+    --panel-border: #90CAF9;   /* Light Blue */
+    --panel-text: #263238;     /* Dark Blue Gray */
+    --panel-shadow: rgba(0, 0, 0, 0.1);
+
+    /* --- BUTTONS (Light Gaming) --- */
+    --button-primary-bg: var(--color-primary);
+    --button-primary-hover-bg: #388E3C; /* Darker Green */
+    --button-primary-text: #ffffff;
+
+    /* --- Danger Button (Light Gaming) --- */
+    --button-danger-bg: var(--color-danger); /* Uses the global danger red */
+    --button-danger-hover-bg: #D32F2F; /* Darker red on hover */
+    --button-danger-text: #ffffff; /* White text for contrast */
+
+    /* --- Secondary Button (Light Gaming) --- */
+    --button-secondary-bg: #E1F5FE; /* Lighter Blue */
+    --button-secondary-hover-bg: #BBDEFB; /* Medium Blue */
+    --button-secondary-text: var(--color-primary); /* Uses primary color for text/icons */
+    --button-border: #D0D0D0; /* Light Gray border */
+
+    /* --- GAME-SPECIFIC ELEMENTS (Light Gaming) --- */
+    --board-grid-lines: rgba(100, 181, 246, 0.4); /* Soft Blue, transparent */
+    --player-x-color: var(--color-primary); /* Uses Green for X */
+    --player-o-color: var(--color-secondary); /* Uses Blue for O */
+    --winning-line-color: #FFD700; /* Gold */
+    --turn-indicator-bg: #E1F5FE; /* Light Blue */
+    --turn-indicator-slider: #A7D9F7; /* Updated: A light, soft blue for active indicator */
+
+
+    /* --- MODAL COLORS (Light Gaming) --- */
+    --modal-bg: var(--panel-bg);
+    --modal-text: var(--panel-text);
+    --modal-shadow: rgba(0, 0, 0, 0.25);
+
+    /* --- NAVBAR (Light Gaming) --- */
+    --navbar-bg: #e3f2fd; /* Lighter Blue */
+    --navbar-text: var(--page-text-muted);
+    --navbar-dropdown-bg: var(--panel-bg);
+    --navbar-dropdown-text: var(--panel-text);
+    --navbar-hover-text: var(--color-primary);
+    --navbar-border: #90CAF9;
+    --dropdown-bg: var(--navbar-dropdown-bg);
+    --dropdown-text: var(--navbar-dropdown-text);
+    --dropdown-hover-bg: #F5F5F5;
+    --dropdown-border: #E0E0E0;
+    --dropdown-border-strong: #D0D0D0;
+
+    /* --- FOCUS RINGS (Light Gaming) --- */
+    --focus-ring-color: #4A90E2;
+    --focus-ring-offset: #FFFFFF;
+
+    /* --- RADIO BUTTON ACCENT --- */
+    --radio-accent: var(--color-primary);
+}
+
+/* --- THEME: 2. CLASSIC DARK GAMING (Deep Blues, Greens & Muted Tones) --- */
+html.dark {
+    /* --- GLOBAL COLORS (Classic Dark) --- */
+    --color-primary: #FFD700; /* Gold for primary/X */
+    --color-secondary: #00BFFF; /* Deep Sky Blue for secondary/O */
+    --color-accent: #facc15; /* Yellow */
+    --color-danger: #ef4444; /* Red */
+
+    /* --- PAGE BACKGROUND & TEXT (Classic Dark) --- */
+    --page-bg-start: #1f2937; /* Dark Blue Gray (for gradient) */
+    --page-bg-end: #374151;    /* Darker Blue Gray (for gradient) */
+    --page-text: #f3f4f6;      /* Light text for readability */
+    --page-text-muted: #9ca3af; /* Muted light gray */
+    --page-bg: #1f2937; /* Default solid background for consistency */
+
+    /* --- HEADER COLORS (Classic Dark) --- */
+    --header-bg: linear-gradient(145deg, #2c3444, #1c222e); /* Dark gradient for header */
+    --header-text: #e2e8f0; /* Light text for header */
+
+
+    /* --- CONTAINER/PANEL COLORS (Classic Dark) --- */
+    --panel-bg: #111827;      /* Very dark background */
+    --panel-border: #3b82f6; /* Blue border */
+    --panel-text: #e5e7eb;    /* Off-white text */
+    --panel-shadow: rgba(0, 0, 0, 0.3);
+
+    /* --- BUTTONS (Classic Dark) --- */
+    --button-primary-bg: var(--color-primary); /* Uses new primary */
+    --button-primary-hover-bg: #DAA520; /* Darker Gold */
+    --button-primary-text: #ffffff;
+
+    /* --- Danger Button (Classic Dark) --- */
+    --button-danger-bg: var(--color-danger); /* Uses the global danger red */
+    --button-danger-hover-bg: #B91C1C; /* Darker red on hover */
+    --button-danger-text: #ffffff; /* White text for contrast */
+
+    /* --- Secondary Button (Classic Dark) --- */
+    --button-secondary-bg: #4b5563; /* Medium gray secondary button */
+    --button-secondary-hover-bg: #6b7280; /* Lighter gray */
+    --button-secondary-text: var(--color-primary); /* Uses primary color for text */
+    --button-border: #374151; /* Dark border */
+
+    /* --- GAME-SPECIFIC ELEMENTS (Classic Dark) --- */
+    --board-grid-lines: #4b5563; /* Medium gray lines, good contrast */
+    --player-x-color: var(--color-primary); /* Uses new Gold for X */
+    --player-o-color: var(--color-secondary); /* Uses new Deep Sky Blue for O */
+    --winning-line-color: #FFF59D; /* Lighter, more vibrant yellow for excellent contrast */
+    --turn-indicator-bg: #374151; /* Dark gray for turn indicator bg */
+    --turn-indicator-slider: #303F9F; /* Dark Indigo for active indicator */
+
+    /* --- MODAL COLORS (Classic Dark) --- */
+    --modal-bg: #111827;
+    --modal-text: var(--panel-text);
+    --modal-shadow: rgba(0, 0, 0, 0.5);
+
+    /* --- NAVBAR (Classic Dark) --- */
+    --navbar-bg: #1f2937; /* Dark blue gray */
+    --navbar-text: var(--page-text-muted);
+    --navbar-dropdown-bg: #283747; /* Slightly lighter background for the dropdown */
+    --navbar-dropdown-text: var(--panel-text);
+    --navbar-hover-text: var(--color-primary);
+    --navbar-border: #3b82f6;
+    --dropdown-bg: var(--navbar-dropdown-bg);
+    --dropdown-text: var(--navbar-dropdown-text);
+    --dropdown-hover-bg: #1f2937;
+    --dropdown-border: #374151;
+    --dropdown-border-strong: #4b5563;
+
+    /* --- FOCUS RINGS (Classic Dark) --- */
+    --focus-ring-color: #3b82f6;
+    --focus-ring-offset: #111827;
+
+    /* --- RADIO BUTTON ACCENT --- */
+    --radio-accent: var(--color-primary);
+}
+
+/* --- THEME: 3. COLORFUL RGB GAMING (High Contrast, Neons & Gradients) --- */
+html.colorful-rgb {
+    /* --- GLOBAL COLORS (Colorful RGB) --- */
+    --color-primary: #00FF00; /* Pure Green for primary/X */
+    --color-secondary: #FF00FF; /* Pure Magenta for secondary/O */
+    --color-accent: #FFFF00; /* Pure Yellow */
+    --color-danger: #FF0000; /* Pure Red */
+
+    /* --- PAGE BACKGROUND & TEXT (Colorful RGB) --- */
+    --page-bg-start: #000000; /* Black (for gradient) */
+    --page-bg-end: #1a001a;    /* Very Dark Purple (for gradient) */
+    --page-text: #00FFFF;      /* Bright Cyan */
+    --page-text-muted: #800080; /* Purple */
+    --page-bg: #0A0010; /* Default solid background, darker */
+
+    /* --- HEADER COLORS (Colorful RGB) --- */
+    --header-bg: linear-gradient(90deg, #FF00FF, #00FFFF); /* Vibrant gradient for header */
+    --header-text: #FFFF00; /* Yellow text for header */
+
+
+    /* --- CONTAINER/PANEL COLORS (Colorful RGB) --- */
+    --panel-bg: rgba(20, 0, 20, 0.9); /* Transparent dark purple */
+    --panel-border: linear-gradient(90deg, #FF00FF, #00FFFF); /* RGB border */
+    --panel-text: #00FF00; /* Green */
+    --panel-shadow: rgba(255, 0, 255, 0.5); /* Magenta shadow */
+
+    /* --- BUTTONS (Colorful RGB) --- */
+    --button-primary-bg: linear-gradient(90deg, #FF00FF, #00FFFF); /* Magenta to Cyan */
+    --button-primary-hover-bg: linear-gradient(90deg, #E000E0, #00E0E0); /* Adjusted hover */
+    --button-primary-text: #ffffff;
+
+    /* --- Danger Button (Colorful RGB) --- */
+    --button-danger-bg: var(--color-danger); /* Uses the global danger red */
+    --button-danger-hover-bg: #CC0000; /* Darker red on hover */
+    --button-danger-text: #ffffff; /* White text for contrast */
+
+    /* --- Secondary Button (Colorful RGB) --- */
+    --button-secondary-bg: rgba(50, 0, 50, 0.7); /* Transparent dark purple */
+    --button-secondary-hover-bg: rgba(70, 0, 70, 0.8); /* Darker purple */
+    --button-secondary-text: #FFFF00; /* Yellow */
+    --button-border: #FF00FF; /* Magenta border */
+
+    /* --- GAME-SPECIFIC ELEMENTS (Colorful RGB) --- */
+    --board-grid-lines: #00FFFF; /* Bright Cyan */
+    --player-x-color: var(--color-primary); /* Green for X */
+    --player-o-color: var(--color-secondary); /* Magenta for O */
+    --winning-line-color: #FFFF00; /* Pure Yellow for winning lines */
+    --turn-indicator-bg: rgba(10, 0, 10, 0.7); /* Very dark transparent purple */
+    --turn-indicator-slider: #000000; /* Pure Black for active indicator */
+
+    /* --- MODAL COLORS (Colorful RGB) --- */
+    --modal-bg: rgba(10, 0, 10, 0.95);
+    --modal-text: #00FF00;
+    --modal-shadow: rgba(0, 255, 255, 0.6); /* Cyan shadow */
+
+    /* --- NAVBAR (Colorful RGB) --- */
+    --navbar-bg: rgba(5, 0, 5, 0.9); /* Very dark transparent purple */
+    --navbar-text: #00FF00; /* Green */
+    --navbar-dropdown-bg: rgba(15, 0, 15, 0.95);
+    --navbar-dropdown-text: #00FFFF; /* Cyan */
+    --navbar-hover-text: #FFFF00; /* Yellow */
+    --navbar-border: linear-gradient(90deg, #FF00FF, #00FFFF);
+    --dropdown-bg: var(--navbar-dropdown-bg);
+    --dropdown-text: var(--navbar-dropdown-text);
+    --dropdown-hover-bg: rgba(20, 0, 20, 0.95);
+    --dropdown-border: #FF00FF;
+    --dropdown-border-strong: #800080;
+
+    /* --- FOCUS RINGS (Colorful RGB) --- */
+    --focus-ring-color: #00FFFF; /* Cyan */
+    --focus-ring-offset: #000000; /* Black */
+
+    /* --- RADIO BUTTON ACCENT --- */
+    --radio-accent: var(--color-primary);
+}
+
+body {
+    /* Apply background and text color using CSS variables */
+    background: linear-gradient(to bottom right, var(--page-bg-start), var(--page-bg-end));
+    color: var(--page-text);
+    /* Smooth transition for theme changes */
+    transition: background 0.7s ease-in-out, color 0.5s ease-in-out;
+    /* Font family for consistency */
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+/* Custom radio button styling */
+input[type="radio"] {
+    background-color: #fff;
+    border: 2px solid var(--radio-accent);
+    transition: all 0.2s ease-in-out;
+    flex-shrink: 0;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 white;
+    border-radius: 50%; /* Ensures it's perfectly round */
+}
+
+input[type="radio"]:checked {
+    background-color: var(--radio-accent);
+    border-color: var(--radio-accent);
+    box-shadow: inset 0 0 0 4px white; /* Creates the inner white dot */
+}
+
+button, a {
+    outline: none;
+    border: none;
+}
+
+/* Add pulse-winner animation */
+@keyframes pulse-winner {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+/* New class for glowing player marks - REDUCED ENHANCEMENT */
+.player-mark-glowing {
+    /* Explicitly ensure full opacity when active */
+    opacity: 1;
+
+    /* Add a higher z-index to ensure it's visually on top */
+    z-index: 20;
+
+    /* Uses currentColor to make the glow match the mark's text color */
+    text-shadow:
+        0 0 1px currentColor,    /* Further reduced glow */
+        0 0 2px currentColor;    /* Further reduced glow */
+
+    /* Add single filter for a more uniform, diffused glow effect */
+    filter: drop-shadow(0 0 2px currentColor); /* Further reduced glow */
+
+    /* Smooth transition for all effects */
+    transition: all 0.3s ease-out;
+}

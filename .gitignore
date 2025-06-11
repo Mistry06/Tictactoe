@@ -1,0 +1,52 @@
+# Node.js
+# NOTE: This .gitignore file is intended to be with a Node.js project.
+# If your project is not Node.js, you may want to use a different .gitignore file.
+# For example, see https://github.com/github/gitignore/blob/main/Node.gitignore
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+/public/build # If you have a public/build directory for compiled assets
+/out
+
+# misc
+.DS_Store # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+.vscode/ # VS Code settings, if you want to ignore them
+.idea/ # IntelliJ IDEA settings
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.next/ # Next.js build output
+.svelte-kit/ # SvelteKit build output
+.vite/ # Vite build output
+.parcel-cache/ # Parcel build cache
+.netlify/ # Netlify CLI files
+.husky/ # Husky git hooks (if used)
+/tmp
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.bak
+*.swo
+*~
+.eslintcache # ESLint cache file
