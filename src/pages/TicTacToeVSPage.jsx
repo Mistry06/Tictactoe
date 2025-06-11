@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Import components
-import Board from '../components/Board.jsx';
+import Board from '../components/board.jsx';
 import TurnIndicator from '../components/TurnIndicator.jsx';
 import ScoreBoard from '../components/ScoreBoard.jsx';
 import StartGameModal from '../components/StartGameModal.jsx'; // Only for VS mode
