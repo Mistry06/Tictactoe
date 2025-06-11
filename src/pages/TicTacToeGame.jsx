@@ -2,11 +2,11 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Import components
-import Board from '../components/Board.jsx';
+import Board from '../components/board.jsx';
 import TurnIndicator from '../components/TurnIndicator.jsx';
 import ScoreBoard from '../components/ScoreBoard.jsx';
 import WinDrawModal from '../components/winModal.jsx';
-import Navbar from '../components/Navbar.jsx';
+import Navbar from '../components/navbar.jsx';
 
 // Import utilities
 import { WINNING_CONDITIONS } from '../utiles/constants.js';
