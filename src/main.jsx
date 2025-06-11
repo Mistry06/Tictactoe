@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+// Removed: import { BrowserRouter } from 'react-router-dom'; // Not supported in Canvas
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* Removed: <BrowserRouter> */}
       <App />
-    </BrowserRouter>
+    {/* Removed: </BrowserRouter> */}
   </React.StrictMode>,
 );
